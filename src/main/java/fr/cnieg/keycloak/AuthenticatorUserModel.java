@@ -5,6 +5,7 @@ import org.keycloak.models.AuthenticatorConfigModel;
 import org.keycloak.models.UserModel;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Authenticator User Model
@@ -32,7 +33,7 @@ public class AuthenticatorUserModel {
             if (userName.matches(attributeRegex)) {
                 List<UserModel> result = context.getSession().users()
                         .searchForUserByUserAttributeStream(context.getRealm(), attributeKey, userName)
-                        .toList();
+                        .collect(Collectors.toList());
                 if (result.size() == 1) {
                     return result.get(0);
                 }
