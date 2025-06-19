@@ -7,7 +7,7 @@ import org.keycloak.services.resource.RealmResourceProvider;
 import org.keycloak.services.resource.RealmResourceProviderFactory;
 
 public class SearchByAttributeResourceProviderFactory implements RealmResourceProviderFactory {
-    public static final String PROVIDER_ID = "search-by-attribute-resource";
+    public static final String PROVIDER_ID = "search-by-attribute";
 
     @Override
     public RealmResourceProvider create(KeycloakSession keycloakSession) {
